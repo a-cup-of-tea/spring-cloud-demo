@@ -1,5 +1,6 @@
 package com.xproject.product.controller;
 
+import com.xproject.product.dataobject.ProductInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.xml.ws.Service;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 public class ClientController {
@@ -41,5 +44,4 @@ public class ClientController {
         System.out.println("response={"+response+"}");
         return response;
     }
-
 }

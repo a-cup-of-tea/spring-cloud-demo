@@ -11,9 +11,7 @@ import com.xproject.product.service.CaregoryService;
 import com.xproject.product.service.ProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,5 +67,17 @@ public class ProductController {
         }
 
         return ResultVOUtils.success(productVOList);
+    }
+
+    /**
+     * 获取商品列表（给订单服务使用）
+     * @param productIdList
+     * @return
+     */
+    @PostMapping("/listForOrder")
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+        return productService.findList(productIdList);
+        ArrayList alist = new ArrayList();
+        alist.sort();
     }
 }

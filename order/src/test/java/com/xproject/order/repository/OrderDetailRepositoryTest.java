@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,6 +27,8 @@ class OrderDetailRepositoryTest extends OrderApplicationTests{
         orderDetail.setProductName("猪肝瘦肉粥");
         orderDetail.setProductPrice(new BigDecimal(7));
         orderDetail.setProductQuantity(2);
+        orderDetail.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        orderDetail.setUpdateTime(new Timestamp(System.currentTimeMillis()));
 
         OrderDetail result = orderDetailRepository.save(orderDetail);
         Assert.isTrue(result != null);

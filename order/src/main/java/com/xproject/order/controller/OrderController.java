@@ -23,6 +23,7 @@ import java.util.Map;
 @RequestMapping("/order")
 public class OrderController {
 
+    @Autowired
     private OrderService orderService;
     /**
      * 1.参数校验

@@ -78,7 +78,7 @@ public class OrderMaster {
   }
 
 
-  public String   getBuyerAddress() {
+  public String getBuyerAddress() {
     return buyerAddress;
   }
 

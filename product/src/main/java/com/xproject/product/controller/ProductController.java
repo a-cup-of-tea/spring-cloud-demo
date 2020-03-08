@@ -77,6 +77,5 @@ public class ProductController {
     @PostMapping("/listForOrder")
     public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
         return productService.findList(productIdList);
-
     }
 }

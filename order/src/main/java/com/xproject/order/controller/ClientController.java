@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,7 +29,7 @@ public class ClientController {
 
     @GetMapping("/getProductMsg")
     public String getProductMsg(){
-        //1.第一种方式(直接使用restTemplate)
+        //1.第一种方式(直接使用restTemplate)，缺点：URL固定写死，难以维护
 //        RestTemplate restTemplate = new RestTemplate();
 //        String response = restTemplate.getForObject("http://localhost:8080/msg",String.class);
 //        System.out.println("response={"+response+"}");
@@ -52,7 +53,7 @@ public class ClientController {
 //        return response;
     }
 
-    @GetMapping("/getProductList")
+    @GetMapping("getProductList")
     public String getProductList(){
         List<ProductInfo> productInfoList = productClient.listForOrder(Arrays.asList("164103465734242707"));
         System.out.println("response={"+productInfoList+"}");

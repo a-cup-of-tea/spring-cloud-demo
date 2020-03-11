@@ -2,11 +2,13 @@ package com.xproject.order.controller;
 
 import com.xproject.order.client.ProductClient;
 import com.xproject.order.dataobject.ProductInfo;
+import com.xproject.order.dto.CartDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -57,6 +59,12 @@ public class ClientController {
     public String getProductList(){
         List<ProductInfo> productInfoList = productClient.listForOrder(Arrays.asList("164103465734242707"));
         System.out.println("response={"+productInfoList+"}");
+        return "successful";
+    }
+
+    @GetMapping("productDecreaseStock")
+    public String decreaseStock(){
+        productClient.deceaseStock(Arrays.asList(new CartDTO("157875196366160022",2)));
         return "successful";
     }
 }

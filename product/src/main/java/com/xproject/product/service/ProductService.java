@@ -1,5 +1,6 @@
 package com.xproject.product.service;
 
+import com.xproject.product.controller.DTO.CartDTO;
 import com.xproject.product.dataobject.ProductInfo;
 
 import java.util.List;
@@ -16,4 +17,10 @@ public interface ProductService {
      * @return
      */
     List<ProductInfo> findList(List<String> productIdList);
+
+    /**
+     * 扣库存
+     * @param cartDTOList
+     */
+    void decreaseStock(List<CartDTO> cartDTOList);
 }

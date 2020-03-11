@@ -5,6 +5,7 @@ import com.xproject.product.Utils.ResultVOUtils;
 import com.xproject.product.VO.ProductInfoVO;
 import com.xproject.product.VO.ProductVO;
 import com.xproject.product.VO.ResultVO;
+import com.xproject.product.controller.DTO.CartDTO;
 import com.xproject.product.dataobject.ProductCategory;
 import com.xproject.product.dataobject.ProductInfo;
 import com.xproject.product.service.CaregoryService;
@@ -77,5 +78,10 @@ public class ProductController {
     @PostMapping("/listForOrder")
     public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
         return productService.findList(productIdList);
+    }
+
+    @PostMapping("/deceaseStock")
+    public void deceaseStock(@RequestBody List<CartDTO> cartDTOList){
+        productService.decreaseStock(cartDTOList);
     }
 }

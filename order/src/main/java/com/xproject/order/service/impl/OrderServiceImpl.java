@@ -15,10 +15,12 @@ import com.xproject.order.utils.KeyUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,6 +35,7 @@ public class OrderServiceImpl implements OrderService {
     private ProductClient productClient;
 
     @Override
+    @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
         String orderId = KeyUtils.genUniqueKey();
         //查询商品信息（调用商品服务）
@@ -73,8 +76,8 @@ public class OrderServiceImpl implements OrderService {
         orderMaster.setOrderAmount(orderAmout);
         orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
-        orderMaster.setCreateTime(new Timestamp(System.currentTimeMillis()));
-        orderMaster.setUpdateTime(new Timestamp(System.currentTimeMillis()));
+        orderMaster.setCreateTime(LocalDateTime.now());
+        orderMaster.setUpdateTime(LocalDateTime.now());
 
         orderMasterRepository.save(orderMaster);
         return orderDTO;

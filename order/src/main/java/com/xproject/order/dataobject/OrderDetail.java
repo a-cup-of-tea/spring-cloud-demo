@@ -3,6 +3,7 @@ package com.xproject.order.dataobject;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 public class OrderDetail {
@@ -36,11 +37,11 @@ public class OrderDetail {
   /**
    * 创建时间
    */
-  private java.sql.Timestamp createTime;
+  private LocalDateTime createTime;
   /**
    * 更新时间
    */
-  private java.sql.Timestamp updateTime;
+  private LocalDateTime updateTime;
 
 
   public String getDetailId() {
@@ -106,20 +107,20 @@ public class OrderDetail {
   }
 
 
-  public java.sql.Timestamp getCreateTime() {
+  public LocalDateTime getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(java.sql.Timestamp createTime) {
+  public void setCreateTime(LocalDateTime createTime) {
     this.createTime = createTime;
   }
 
 
-  public java.sql.Timestamp getUpdateTime() {
+  public LocalDateTime getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(java.sql.Timestamp updateTime) {
+  public void setUpdateTime(LocalDateTime updateTime) {
     this.updateTime = updateTime;
   }
 

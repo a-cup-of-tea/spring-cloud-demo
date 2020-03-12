@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 public class ProductInfo {
@@ -44,11 +45,11 @@ public class ProductInfo {
   /**
    * 创建时间
    */
-  private Timestamp createTime;
+  private LocalDateTime createTime;
   /**
    * 更新时间
    */
-  private Timestamp updateTime;
+  private LocalDateTime updateTime;
 
   public String getProductId() {
     return productId;
@@ -114,19 +115,19 @@ public class ProductInfo {
     this.categoryType = categoryType;
   }
 
-  public Timestamp getCreateTime() {
+  public LocalDateTime getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(Timestamp createTime) {
+  public void setCreateTime(LocalDateTime createTime) {
     this.createTime = createTime;
   }
 
-  public Timestamp getUpdateTime() {
+  public LocalDateTime getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(Timestamp updateTime) {
+  public void setUpdateTime(LocalDateTime updateTime) {
     this.updateTime = updateTime;
   }
 }

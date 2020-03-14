@@ -1,6 +1,6 @@
 package com.xproject.product.service;
 
-import com.xproject.product.controller.DTO.CartDTO;
+import com.xproject.product.dto.CartDTO;
 import com.xproject.product.dataobject.ProductInfo;
 
 import java.util.List;

@@ -1,8 +1,7 @@
 package com.xproject.product.service.impl;
 
-import com.xproject.product.ProductApplication;
 import com.xproject.product.ProductApplicationTests;
-import com.xproject.product.controller.DTO.CartDTO;
+import com.xproject.product.dto.CartDTO;
 import com.xproject.product.dataobject.ProductInfo;
 import com.xproject.product.service.ProductService;
 import org.junit.jupiter.api.Test;
@@ -12,8 +11,6 @@ import org.springframework.util.Assert;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Component
 class ProductServiceTest extends ProductApplicationTests {

@@ -1,4 +1,4 @@
-package com.xproject.product.controller.exception;
+package com.xproject.product.exception;
 
 import com.xproject.product.enums.ResultEnum;
 

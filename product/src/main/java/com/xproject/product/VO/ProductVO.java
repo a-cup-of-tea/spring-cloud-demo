@@ -1,7 +1,6 @@
 package com.xproject.product.VO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.xproject.product.dataobject.ProductInfo;
 
 import java.util.List;
 

@@ -1,11 +1,10 @@
 package com.xproject.product.controller;
 
-import com.netflix.discovery.converters.Auto;
 import com.xproject.product.Utils.ResultVOUtils;
 import com.xproject.product.VO.ProductInfoVO;
 import com.xproject.product.VO.ProductVO;
 import com.xproject.product.VO.ResultVO;
-import com.xproject.product.controller.DTO.CartDTO;
+import com.xproject.product.dto.CartDTO;
 import com.xproject.product.dataobject.ProductCategory;
 import com.xproject.product.dataobject.ProductInfo;
 import com.xproject.product.service.CaregoryService;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**

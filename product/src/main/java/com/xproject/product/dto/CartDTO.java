@@ -1,4 +1,4 @@
-package com.xproject.product.controller.DTO;
+package com.xproject.product.dto;
 
 public class CartDTO {
     /**
